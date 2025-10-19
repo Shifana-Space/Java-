@@ -1,1 +1,31 @@
+public class Main {
+    public static void main(String[] args) {
+        interface Shape {
+            double calculate();
+        }
 
+        class Circle implements Shape {
+            private double r;
+            public void setNum(double r) { 
+                this.r = r;
+                }
+            public double calculate() { 
+                return Math.PI * r * r;
+                }
+        }
+        // Rectangle class implementing Shape
+        class Rectangle implements Shape {
+            private double length, width;
+            public void setNum(double l, double w) { length = l; width = w; }
+            public double calculate() { return length * width; }
+        }
+
+        Circle c = new Circle();
+        c.setNum(5.0);
+
+        Rectangle rect = new Rectangle();
+        rect.setNum(4.0, 6.0);
+
+        System.out.println(String.format("Area of Circle: %.03f" , c.calculate()));
+        System.out.println("Area of Rectangle: " + rect.calculate());
+    }
