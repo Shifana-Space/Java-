@@ -1,0 +1,50 @@
+public class Main {
+
+    // Abstract class
+    abstract class Vehicle {
+        abstract void speed();  // abstract method
+    }
+
+    // Subclass implementing abstract method
+    class Car extends Vehicle {
+        void speed() {
+            System.out.println("Very fast: 90km/h");
+        }
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main();
+
+        // Directly use subclass
+        Car c = obj.new Car();
+        c.speed();  // calls Car's implementation
+    }
+}
+----------------------------------------------------------------------------------------------------------------
+public class Main {
+
+    // Abstract class
+    abstract class Working {
+        abstract void turn_on();
+        abstract void turn_off();
+    }
+
+    // Subclass implementing abstract methods
+    class Tv extends Working {
+        void turn_on() {
+            System.out.println("ON");
+        }
+        void turn_off() {
+            System.out.println("OFF");
+        }
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main();
+
+        // Reference type = abstract class, object = subclass
+        Working T = obj.new Tv();
+        T.turn_on();   // calls Tv's turn_on()
+        T.turn_off();  // calls Tv's turn_off()
+    }
+}
