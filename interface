@@ -16,8 +16,12 @@ public class Main {
         // Rectangle class implementing Shape
         class Rectangle implements Shape {
             private double length, width;
-            public void setNum(double l, double w) { length = l; width = w; }
-            public double calculate() { return length * width; }
+            public void setNum(double l, double w) {
+           length = l; width = w; 
+            }
+            public double calculate() { 
+            return length * width;
+           }
         }
 
         Circle c = new Circle();
